@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //setTimeout延迟：1. javaScript单线程执行，setTimeout的作用是在间隔一定的时间后，将函数插入主线程任务队列中，
+        //2. 等栈中的同步任务都执行完毕后，再执行任务队列中的函数，而且插入后也不是立即执行。
+        //3. 因为栈中的同步任务也会耗时，所以间隔的时间一般会大于等于指定的时间
+        //4. 也可以说一切的异步操作都是有误差的，总在同步任务之后
+        /* let num = 1;
+        console.log(num);
+        function add(){
+            num += 1;
+            console.log(num);
+        }
+        setTimeout(add,1000); */
+
+        /* let data = new Date().getSeconds();
+        let cout = 0;
+        setInterval(() => {
+            cout ++;
+            console.log(new Date().getSeconds());
+            console.log(cout);
+        },1000); */
+
+        //精确计时...
+        var startTime = new Date().getTime();
+        var count = 0;
+        setInterval(function () {
+            var i = 0;
+            while (i++ < 100000000);
+        }, 0);
+
+        function fixed() {
+            count++;
+            var offset = new Date().getTime() - (startTime + count * 1000);
+            var nextTime = 1000 - offset;
+            if (nextTime < 0) nextTime = 0;
+            setTimeout(fixed, nextTime);
+
+            console.log(new Date().getTime() - (startTime + count * 1000));
+        }
+        setTimeout(fixed, 1000);
+        //requestAnimationFrame定时器，在主线程里面
+    </script>
+</body>
+
+</html>

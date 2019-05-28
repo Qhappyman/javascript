@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<script type="text/javascript">
+		// var num = 0; 
+		// var arr = [1,2,3,4,5,6,7];
+		// var app = ['y','x','z'];
+		// var my =new Array(10);
+		//数组连接
+		// var c = app.concat(arr);
+		//数组拷贝替换 3个参数，复制到索引位置，复制起始索引，复制个数
+		// var d = arr.copyWithin(2,2,2);
+		// function check(age){
+		// 	if(age>3)
+		// 		my[num] = age;
+		// 		num++;
+		// }
+		// arr.every(check);
+		// console.log(my);
+		//数组固定值填充
+		// app.fill("tin")
+		// var double = [[1,2],[3,4],[2,3]];
+		// function check(double){
+		// 	if(double>3)
+		// 		// my[num] = age;
+		// 		// num++;
+		// 		return age;
+		// }
+		// console.log(double.filter(check));
+
+		// 生成一个函数 函数传入一个对象数组 输出所有 age 比 传入参数小的对象
+// let ar = [{id:1, age: 18}, {id:2, age:19}, {id:3, age:33}, {id:4, age:23}, {id:5, age:15}, {id:6, age:72}, {id:7, age:24}, {id:8, age:21}, {id:9, age:47}, {id:10, age:32}];
+// function mmp(mp){
+// 	if(mp.id>3)
+// 		return true;
+// }
+//return ture/false(0值)
+// var c = ar.filter(mmp);
+// var mp = ar.map(function (n){
+// 	var obj = {};
+// 	if(obj[n.age]>18)
+// 		debugger;
+// 		return obj;
+// });
+		//filter检测数组元素,返回符合条件的数组元素形成新的数组（同样返回布尔值,避免返回客观值)
+		// var all = [0,1,2,3,4,5,6];
+		// var it = all.filter((all1)=>{if(all1>3) return all1;})
+		//find：返回满足条件的第一个元素
+		// console.log(all.find((mp)=>mp>-3));
+		//findindex 返回满足条件的第一个索引
+		//forEach 每个元素执行回调函数
+		//forEach(function (现在的值，索引，所处的对象))
+		// all.forEach((fi,se)=>{console.log(fi);console.log(se);})
+		//from(创建的对象，回调函数，。。)通过给定的对象中创建一个数组
+		// var my = Array.from("123",(x)=>x*x);
+		//includes()判断数组是否包含一个指定的值
+		//console.log(all.includes(3)); //true
+		//isArray 判断对象是否为数组
+		//console.log(Array.isArray(all)); //true
+		//join()将数组元素连接起来为字符串，唯一参数选择连接符，默认为逗号
+		// all.join();
+		// lastIndexOf(检索的字符串值，检索起始位置（默认从后向前）)
+		// 没有检索到返回-1
+		//map()函数处理数组每一个值并返回新的数组function(数组值，值索引，数组对象
+		// var m = all.map(function(x){if(x>3) return x;}).
+		//pop()删除数组的最后一个元素并返回删除的元素
+		// all.pop();
+		// push()向末尾添加新的元素并返回
+		// all.push(1,2);
+		//reduce()将数组计算为一个值（从左到右），接受一个函数
+		//function(初始值，当前元素的值，当前元素的索引，对象)
+		// function it(f,s,t){
+			// return f+s;
+		// }
+		// console.log(all.reduce(it)); 21
+		//reduceRight()从右到左
+		//reverse()反转数组元素的顺序
+		// all.reverse();
+		//shift()删除并返回数组的第一个元素
+		// all.shift(); //1
+		//slice(起始位置，终点位置)选取数组的一部分，返回新的数组
+		// all.slice(2,5);选取的元素不包括终点索引值，包括起点索引值
+		//some(一个函数)监测数组是否有元素符合某一个条件，返回布尔值
+		//sort()排序，使用数字排序，必须用一个函数来作为参数，默认升序
+		//splice()从数组中添加或删除元素
+		// splice(从何处删除/添加元素，删除数量，要添加的元素)返回删除值
+		//toString()将数组转化为字符串
+		// all.toString();
+		//unshift()向数组开头添加元素
+		//valueOf返回数组对象的原始值
+		// let a = {};//null 与 undefined
+		// console.log(typeof(a));
+		// var My = function(name){
+		// 	this.name = name;
+		// }
+		// var my = new My("郭俊清");
+		// My.prototype.sex = "male";
+		// var a = function(){
+		// 	return 123;
+		// }
+		// a.prototype = null;
+		// console.log(a instanceof Object);
+		// console.log(typeof(a));
+		//无用
+		// var a = {
+			
+		// 	c :function(){
+		// 		console.log(2);
+		// 	}
+		// }
+		// a.p = a;
+		// a.p.c=function(){
+		// 	console.log(2);
+		// }
+		// var a = 1;
+		// function my(){
+		// 	console.log(a);
+		// 	debugger;
+		// }
+		// function he(){
+		// 	var a = 2;
+		// 	my();
+
+		// }
+		// he();
+		//赋值 都改变
+		//深浅拷贝
+		var a ={
+			b :1,
+			c:{
+				book:"you"
+			}
+		}
+		//var c = a;
+		//c.b = 3; //a.b = 3; 复制的地址，共用一个堆内容
+		//object.assign()
+		//var b = Object.assign({},a);
+		//console.log(b); //同a
+		//a.b = 5;
+		//console.log(b.b);//1
+		//a.c.book = "ni";
+		//console.log(b.c.book) //"ni"
+
+		var a ={
+			b :1,
+			c:{
+				book:"you"
+			}
+		}
+		//var d = Object.assign({},a.c);
+		//console.log(d);//同a.c
+		//a.c.book = "ni";
+		//console.log(d.book);//you
+		//自我认为，Object.assign()是深拷贝，实际上，Object.saaign()只进行了第一层的拷贝，拷贝第二层的引用地址,所以是浅拷贝
+		//let e = {...a};//和Object.assign()一样
+		//深拷贝
+		//JSON.parse(JSON.stringify(object))
+		let f =JSON.parse(JSON.stringify(a));
+		a.b = 5;
+		a.c.book = "my";
+		console.log(f);//b:1 c.book:you 无影响
+		//弊端：忽略Symbol,undefined,function
+		let g = {
+			a:undefined,
+			b:Symbol("guo"),
+			c:()=>console.log(1),
+			d:1
+		}
+		let m = JSON.parse(JSON.stringify(g));
+		console.log(m);//d:1
+		//循环引用报错
+		// let obj = {
+  //   		a: 1,
+  //   		b: {
+  //       		c: 2,
+  //  				d: 3
+  //   		}
+		// }
+		// obj.a = obj.b;
+		// obj.b.c = obj.a;
+
+		// let b = JSON.parse(JSON.stringify(obj));
+		// Uncaught TypeError: Converting circular structure to JSON
+		//new Date()转化不正确
+		// let data = new Date();
+		// console.log(JSON.stringify(data));
+		// console.log(JSON.parse(JSON.stringify(data)));
+		//解决方法：转化为字符串或时间戳
+		let date = (new Date()).valueOf();
+		JSON.stringify(date);
+		JSON.parse(JSON.stringify(date));
+		//正则出错
+		let obj = {
+    		name: "muyiy",
+    		a: /'123'/
+		}
+		console.log(obj);
+		// {name: "muyiy", a: /'123'/}
+
+		let b = JSON.parse(JSON.stringify(obj));
+		console.log(b);
+		// {name: "muyiy", a: {}}
+		//--	和原数据是否指向同一对象	第一层数据为基本数据类型	原数据中包含子对象
+				//赋值	 是	改变会使原数据一同改变	改变会使原数据一同改变
+//浅拷贝	否	改变不会使原数据一同改变	改变会使原数据一同改变
+//深拷贝	否	改变不会使原数据一同改变	改变不会使原数据一同改变	
+	</script>
+</body>
+</html>

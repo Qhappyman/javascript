@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //从数组中提取值，按位赋值
+            let[a,b,c] = [1,2,3];
+            let[d,,e] = [1,2,3];//d:1,e:3
+            let [f,i,j] = [4];//f:4,i:undefined,j:undefined
+            //允许设置默认值
+            let[y = '1',x] = [2,3]; 
+            //ES6内部使用严格相等运算符（===），判断一个位置是否有值。所以，如果一个数组成员不严格等于undefined，默认值是不会生效的
+            let[m,z = '2'] = [1,undefined];//m:1,z:2
+            //先执行左边赋值，再执行右边按位赋值（Undefined除外)
+            //自我认为具体操作过程
+            //let[o = 3,p] = [1,2];
+            //等价于
+            let o;
+            o = 3
+            let p;
+            o = 2;
+            p = 2;
+            //对象的解构赋值
+            //var {foo,baz} = {foo:"123",baz:"456"};
+            //相当于
+            var {foo:foo,baz:baz} = {foo:"123",baz:"465"};
+            //数组赋值按位赋值，对象赋值按属性名赋值，与顺序无关
+            //对象的解构赋值的内部机制，是先找到同名属性，然后再赋给对应的变量。真正被赋值的是后者，而不是前者
+            //变量名与属性名不一样必须使用下者
+            let {my: bzm} = {my:"guo"};//my:undefined,bzm:"guo"
+    </script>
+    
+</body>
+</html>

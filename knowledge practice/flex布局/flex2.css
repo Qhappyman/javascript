@@ -1,0 +1,19 @@
+#father{
+    display: flex;
+    background-color: aquamarine;
+    width: 300px;
+    height: 300px;
+    flex-direction: column;
+}
+#son1{
+    background-color: blue;
+    width: auto;
+    height: 100px;
+}
+#son2{
+    background-color:forestgreen;
+    width: auto;
+    height: 80px;
+    flex-basis: auto;
+    flex-shrink: 5;
+}

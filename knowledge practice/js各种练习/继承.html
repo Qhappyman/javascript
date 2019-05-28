@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>继承</title>
+</head>
+<body>
+    <script>
+    /*function Person(){
+        var a = 1;
+        this.read = "person";
+    }
+    Person.prototype.setAge = function (){
+        var c = 5;
+    }
+    function Student(){
+        this.bond = "student";
+    }
+    Student.prototype = new Person();
+    var student = new Student();
+    debugger;
+    function instance(a,b){
+        if(b.prototype==null){
+            return false;
+        }
+        else
+        {
+            if(a._proto_==b.prototype){
+                return true;
+            }          
+        }
+    }*/
+    function Foo(){
+        getName = function()
+        {alert(1);};
+        return this;
+    }
+    Foo.getName = function()
+    {
+        alert(2);
+
+    };
+    Foo.prototype.getName = function(){
+        alert(3);
+    };
+     var getName = function()
+    {
+        alert(4);
+    };
+    function getName(){
+        alert(5);
+    };
+  
+    var a = new(new Foo().getName)();//3 3
+    var b = new Foo().getName;
+    </script>
+</body>
+</html>

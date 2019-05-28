@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //创建一个arr数组对象
+        Array.prototype.foo  = new Date();
+        let arr = new Array(1,2,3);
+        arr.meth = new Date();//添加数组属性
+        for(let value of arr){
+             console.log(value);//1，2,3只返回具有数字索引的属性值
+        }
+        //arr[5] = '6';1,2,3,undefined,undefined,6数字索引值没有为undefined；
+        let str = "javascript";
+        for(let s of str ){
+            console.log(s);
+        }
+        for(let i in arr){
+            console.log(i);
+        }
+        let fun = {
+            name:'guo',
+            sex:'male'
+        }
+        for(let i in fun){
+            console.log(i);//name,sex; for in遍历自身和继承的可枚举属性，不能获取属性值
+        }
+        /* for(let s of fun){
+            console.log(s);
+        } */ //报错，for of 不可以遍历普通对象
+        let my = function(){
+            alert('1');
+        }
+        for(let i in my){
+            console.log(i);
+        }
+        /* for(let s of my){
+            console.log(s);
+        } *///报错，function是普通对象
+        //for of只可以遍历有iterator接口的成员(遍历器接口)
+        //本质上遍历器是一种线性处理，当遍历一般对象时不知道哪个属性在前，哪个在后，无法排列，所以对于非线性结构的数据结构，部署遍历器接口相当于一种信息转换，想要使用for of就要自己部署遍历器接口了
+        //原生具有iteration接口的数据：Array,Map,Set,String,TypeArray,argument对象,Nodelist对象,手动部署遍历器接口？
+        //forEach()只能遍历数组，没有返回值，或者返回值是undefined
+        let ayy = [1,2,3,4];
+        ayy.forEach((item)=>{
+            item *=10;
+        });
+        console.log(ayy);//1,2,3,4
+        ayy.forEach((item) => {
+            ayy[1] = 10;
+        });//返回值undefined
+        console.log(ayy);//1,10,3,4
+        let arry = [
+        {name:"guo",sex:"male"},
+        {sex:"female"}
+        ];
+        arry.forEach((item) => {
+            item.name = "wang";
+        });
+        console.log(arry);//{name:"wang",sex:"male"}{sex:"female",name:"wang"}注意三种区别
+        //总结：forEach遍历每一个数组元素，但是不能逐个修改（没有返回，到不了原数组），例一，但是可以强制手动控制数组的变化，例二
+        //map遍历之后返回新数组
+        let azz = [1,2,3,4];
+        console.log(azz.map((item) =>{
+            return(item *=10);
+        }))//10,20,30,40
+    </script>
+</body>
+</html>

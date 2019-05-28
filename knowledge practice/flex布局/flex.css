@@ -1,0 +1,33 @@
+#father{
+    display: flex;
+    background-color: aqua;
+    height: 300px;
+    width: 350px;
+    flex-direction: row; /* 默认：row  row-reserve colum  colum-reserve */
+    flex-wrap: wrap; /* wrap nowrap wrap-reserve*/
+    flex-flow:row wrap; /* 上面俩个简写 */
+    /*justify-content: flex-end; /* 主轴上对齐方式 flex-start flex-end center space-between space-around */
+    align-items: center; /*flex-start flex-end center baseline stretch(项目未设置高度或为auto)*/
+}
+#son1{
+    background-color: blue;
+    /* width: 100px;
+    height: 100px; */
+    order:3;
+    flex-grow: 2;
+}
+#son2{
+    background-color:lawngreen;
+    /* width: 100px;
+    height: 100px; */
+}
+#son3{
+    background-color:hotpink;
+    /* width: 100px;
+    height: 100px; */
+}
+#son4{
+    background-color:coral;
+    /* width: 100px;
+    height: 100px; */
+}

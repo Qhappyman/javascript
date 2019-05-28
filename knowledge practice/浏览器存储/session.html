@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Storage存储值对
+        //方法 clear();getItem(name);key(index);removeItem(name);setItem(name,value);
+        //session存储一个会话，单页面，存储少，是Storage的一个实例对象。
+        //可刷新不可关闭，关闭即消失，用来存储登录信息（忘记密码模式），当然也可以使用cookie默认消失时间
+        //与localstroage区别：localStroage更多，localStorage可以多页面，永久保存，只能用js删除或浏览器清理
+        //相同点：同源策略
+        sessionStorage.name = "guo";
+        console.log(sessionStorage.getItem("name"));
+    </script>
+</body>
+</html>

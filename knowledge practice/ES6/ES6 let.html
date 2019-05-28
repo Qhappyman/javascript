@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //暂时性死区
+        /* var temp = 132;
+        (()=>{
+            temp = 456;//报错ReferenceError
+            let temp;
+        })(); */
+        //let没有提升过程,且在块内用let(const)声明的变量就绑定在这个块，不受外部影响，所以法务找到tempty
+
+        //typeof问题
+        //使用let:
+        /*(typeof(x);//报错,一般是不会的，谁让他是let声明过的呢？不使用let声明直接检测反而不会报错
+        let x;*/
+
+        //不可重复定义变量（一个块/函数/全局区域内）(包括参数)
+        /*let a;
+        let a;*///'a' has already been declared
+
+        //块级作用域
+        function f1() {
+            let n = 5;
+            if (true) {
+              let n = 10;
+            }
+            console.log(n); // 5
+          }
+          //变量声明在块中则无法被外部访问，互不影响，上面代码若在ES5中则为10，没有块级作用域
+
+          //do表达式(未提案) 块不像函数一样有返回值，就是一个块，但是为了得到返回值，出现了do操作
+          /* let x = do {
+              let t = 1;
+            t = t + 1;
+          };*/
+
+        //const
+        const a =10;//声明时必须赋值，否则Missing initializer in const declaration
+                    //只作用于块级，同let几乎没有区别
+    </script>
+</body>
+</html>

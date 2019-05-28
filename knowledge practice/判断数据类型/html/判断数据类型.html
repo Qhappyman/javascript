@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*var a = 1;
+        var b = true;
+        console.log(a==b);//只比较数值 true
+        console.log(a===b);//比较数据类型false
+        var My = {
+            age:1
+        }
+        var you = My;
+        console.log(you.age);//1共用一段堆内存，栈地址不同*/
+        //you.age = 10;
+        //console.log(My.age); //10
+        
+        // var a = null;
+        // var b = new Array();
+        // var c;
+        // console.log(typeof(a)); //object typeof()无法判断null和Array,都是object
+        // console.log(typeof(b));//object
+        // console.log(typeof(c));//undefined
+        // document.write("<body>"+"<ul>"+"<li>123</li>"+"<li>456</li>"+"</ul>"+"</body>");
+        (function () {
+//jscs:enable
+const footerTpl = function () {
+  /*
+　<footer>
+        <ul class="share-group">
+          <li><a href="">教务在线</a></li>
+          <li><a href="">重邮官网</a></li>
+          <li><a href="">商业合作</a></li>
+          <li><a href="">非法举报</a></li>
+          <li><a href="">发现</a></li>
+          <li><a href="">关于我们</a></li>
+        </ul>
+        <div class="copy">
+            <span>邮你 2017</span>
+        </div>
+
+    </footer>
+  */
+};
+
+const footer = footerTpl.toString().replace(/^[^\/]+\/\*!?/, '').replace(/\*\/[^\/]+$/, '') +
+      '</html>';
+document.write(footer);
+})();
+        
+    </script>
+</body>
+</html>

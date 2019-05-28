@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form id = "form1"  method="post">
+        <input type="text" name="uesrname" id="userName" value="guojunqing">
+        <input type="password" name="password" id="passWord">
+        <input type="submit" value="注册" id="submit">
+    </form>
+    <script>
+       /* let submit = document.getElementById('submit');
+        submit.addEventListener("click",pull);
+        let xhr = new XMLHttpRequest();
+        function pull(){
+            xhr.onreadystatechange = ()=>{
+                if(xhr.status >=100 && xhr.readyState >=1){
+                    console.log(responseText);
+                    console.log(xhr.readyState);
+                    console.log(xhr.statusText);
+                    alert("注册成功");
+                    //window.location.href = "logon.html";
+                }
+                else{
+                    console.log(xhr.status);
+                    console.log(xhr.readyState);
+                    console.log(xhr.statusText);
+                    alert('failed');
+                }
+            };
+        };
+            xhr.open("get","https://easy-mock.com/mock/5c35a447a7a7577b357b4596/example/example#!method=get",true);
+            xhr.send(); */
+            let submit = document.getElementById('submit');
+            var request = new XMLHttpRequest();
+            window.onload = function(){				
+			request.onreadystatechange = function(){
+				if(request.status == 200 && request.readyState == 4)
+				{								
+					console.log(JSON.parse(request.responseText));					
+				}				
+				else 
+				{
+					console.log("request was unsuccessful");
+				};				
+			};
+            };
+			request.open("get","https://www.easy-mock.com/mock/5c35a447a7a7577b357b4596/example/example#!method=get",true);
+			request.send();
+            
+        
+    </script>
+</body>
+</html>

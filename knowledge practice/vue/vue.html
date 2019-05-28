@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://unpkg.com/vue"></script>
+	
+
+</head>
+<body>
+	
+	<div id="vue-app">
+		<h1>{{name}}</h1>
+		<p>{{job}}</p>
+		<p>{{greet('good')}}</p>
+		<a v-bind:href="website">我的github</a>
+		<input type="text"v-bind:value="name">
+		<p v-html="websiteTag">插入标签</p> <!--插入标签于p中-->
+		<p>my age is {{greet('30')}}</p>
+		<button v-on:click="age++">涨一岁</button>
+		<button @click="age--">减一岁</button>
+		<button v-on:dblclick="add(10)">双击加十岁</button>
+		<p>My age is {{age}}</p>
+		<div id="div1" v-on:mousemove="XYget">
+			{{x}},{{y}}
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
